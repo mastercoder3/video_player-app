@@ -1,7 +1,7 @@
 {
-  "name": "qiinii",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
+  "name": "Qiinii",
+  "version": "1.0.0",
+  "author": "Ingenious Mac",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -36,6 +36,7 @@
     "angularfire2": "5.0.0-rc.11",
     "com.moust.cordova.videoplayer": "https://github.com/moust/cordova-plugin-videoplayer.git",
     "cordova-android": "6.4.0",
+    "cordova-android-play-services-gradle-release": "^2.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-facebook4": "^2.4.0",
     "cordova-plugin-file": "^6.0.1",
@@ -75,7 +76,10 @@
       },
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-file": {},
-      "cordova-sqlite-storage": {}
+      "cordova-sqlite-storage": {},
+      "cordova-android-play-services-gradle-release": {
+        "PLAY_SERVICES_VERSION": "15.0.0"
+      }
     },
     "platforms": [
       "android"
