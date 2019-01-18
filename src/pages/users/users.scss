@@ -1,0 +1,61 @@
+page-users {
+    .toolbar-title {
+        text-align: center;
+    }
+
+    .back-button {
+        color: map_get($colors, netflixWhite);
+    }
+
+    ion-title {
+        img {
+            max-height: 56px;
+            text-align: center;
+            margin-right: 16px;
+        }
+    }
+
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+
+    .content {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        .low-opacity {
+            opacity: 0.2;
+        }
+
+        .who-watching {
+            font-size: 20px;
+            text-align: center;
+            color: map_get($colors, netflixWhite);
+        }
+
+        img {
+            max-width: 80%;
+        }
+
+        .add-profile {
+            font-size: 80px;
+        }
+
+        p {
+            text-align: center;
+            color: map_get($colors, netflixWhite);
+        }
+
+        .user-thumbnail {
+            position: relative;
+            display: inline-block;
+
+            ion-icon {
+                position: absolute;
+                top: calc(50% - 50px);
+                left: calc(50% - 20px);
+                color: map_get($colors, netflixWhite);
+                font-size: 50px;
+            }
+        }
+    }
+}

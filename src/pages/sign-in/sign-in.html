@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/netflix-logo.png">
+    </ion-title>
+
+    <ion-buttons right>
+      <button class="help" ion-button clear>HELP</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll" text-center padding>
+  <ion-row>
+    <p class="sign-in-title">Sign in</p>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="loginData.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="loginData.password"></ion-input>
+    </ion-item>
+
+    <button color="netflixRed" ion-button round full (click)="signIn()">SIGN IN</button>
+  </ion-row>
+
+  <ion-row>
+    <ion-col text-center>
+      <button class="social-button" ion-button round color="facebook" (click)="signInWithFacebook()">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+    </ion-col>
+
+    <ion-col text-center>
+      <button class="social-button" ion-button round color="googlePlus" (click)="signInWithGoogle()">
+        <ion-icon name="logo-googleplus"></ion-icon>
+      </button>
+    </ion-col>
+
+    <ion-col text-center>
+      <button class="social-button" ion-button round color="twitter" (click)="signInWithTwitter()">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="height: 20%; margin-top: 15%;">
+    <ion-col>
+      <p>Forgot your email or password?</p>
+      <p (click)="goToSignUp()">New to Netflix?
+        <strong>Sign up now.</strong>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>My List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-content padding>
+    <ion-row *ngIf="loaded && myListItems.length <= 0" class="movies-shows-row">
+      <ion-col text-center>
+        <button ion-button clear color="netflixWhite">
+          <ion-icon name='ios-checkmark-circle'></ion-icon>
+        </button>
+
+        <p>Movies and TV show that you add to your list appear here.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="loaded && myListItems.length <= 0" class="find-downloads-row">
+      <ion-col text-center>
+        <button ion-button icon-start color="netflixWhite">
+          FIND SOMETHING TO WATCH
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="!loaded">
+      <ion-col text-center>
+        <br>
+        <ion-spinner color="netflixRed"></ion-spinner>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="loaded && myListItems.length > 0" style="padding-left: 0px;">
+      <ion-col col-4 *ngFor="let myListItem of myListItems">
+        <img src="{{myListItem.picture}}" (click)="goToMyListItem(myListItem)" style="width:100%">
+      </ion-col>
+    </ion-row>
+  </ion-content>
+</ion-content>

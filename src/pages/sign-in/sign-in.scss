@@ -1,0 +1,60 @@
+page-sign-in {
+  .back-button {
+    color: map_get($colors, netflixWhite);
+  }
+
+  ion-title {
+    img {
+      max-height: 56px;
+      text-align: center;
+      margin-right: 16px;
+    }
+  }
+
+  .help {
+    color: map_get($colors, netflixWhite);
+  }
+
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+
+  .content {
+    background-color: map_get($colors, netflixDarkGrey);
+
+    .sign-in-title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    ion-item {
+      background-color: map_get($colors, netflixDarkGrey);
+
+      ion-label {
+        color: map_get($colors, netflixWhite);
+      }
+
+      ion-input {
+        color: map_get($colors, netflixWhite);
+      }
+    }
+
+    button {
+      margin-top: 40px;
+    }
+
+    p {
+      color: map_get($colors, netflixWhite);
+    }
+
+    .social-button {
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+
+      ion-icon {
+        font-size: 30px;
+      }
+    }
+  }
+}

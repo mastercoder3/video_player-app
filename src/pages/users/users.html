@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/netflix-logo.png">
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only color="netflixWhite" *ngIf="!showEditIcon" (click)="editProfiles()">
+        <ion-icon name="md-create" item-end></ion-icon>
+      </button>
+
+      <button ion-button icon-only color="netflixWhite" *ngIf="showEditIcon" (click)="cancelEdit()">
+        <ion-icon name="md-close-circle" item-end></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll" text-center padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p class="who-watching">Who's watching?</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="user-thumbnail">
+          <img src="assets/imgs/orange-user.png" [class.low-opacity]="showEditIcon">
+          <p>Mr John Doe</p>
+          <ion-icon *ngIf="showEditIcon" name="md-create"></ion-icon>
+        </div>
+      </ion-col>
+
+      <ion-col col-6>
+        <div class="user-thumbnail">
+          <img src="assets/imgs/blue-user.jpg" [class.low-opacity]="showEditIcon">
+          <p>Parasite 1</p>
+          <ion-icon *ngIf="showEditIcon" name="md-create"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="user-thumbnail">
+          <img src="assets/imgs/yellow-user.png" [class.low-opacity]="showEditIcon">
+          <p>Parasite 2</p>
+          <ion-icon *ngIf="showEditIcon" name="md-create"></ion-icon>
+        </div>
+      </ion-col>
+
+      <ion-col col-6>
+        <div class="user-thumbnail">
+          <img src="assets/imgs/kids-user.png" [class.low-opacity]="showEditIcon">
+          <p>Kids</p>
+          <ion-icon *ngIf="showEditIcon" name="md-create"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-icon class="add-profile" name="md-add-circle" color="netflixWhite"></ion-icon>
+        <p>Add Profile</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Downloads</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row class="smart-downloads-row">
+    <ion-col col-10>
+      <ion-row>
+        <p class="item-title">Smart Downloads</p>
+      </ion-row>
+      <ion-row>
+        <p class="item-sub-title">Completed episodes will be deleted and replaced with the next episodes, only on Wi-Fi.</p>
+      </ion-row>
+    </ion-col>
+
+    <ion-col col-2>
+      <ion-toggle checked="false" color="netflixRed"></ion-toggle>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!hasAnyDownloads" class="movies-shows-row">
+    <ion-col text-center>
+      <button ion-button clear color="netflixWhite">
+        <ion-icon name='md-download'></ion-icon>
+      </button>
+
+      <p>Movies and TV show that you download appear here.</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!hasAnyDownloads" class="find-downloads-row">
+    <ion-col text-center>
+      <button ion-button icon-start color="netflixWhite" (click)="goToAvailableDownloads()">
+        FIND SOMETHING TO DOWNLOAD
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="hasAnyDownloads">
+    <div padding>
+      <ion-segment color="netflixRed" [(ngModel)]="downloadType">
+        <ion-segment-button value="movies">
+          Movies
+        </ion-segment-button>
+
+        <ion-segment-button value="tvShows">
+          Tv Shows
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="downloadType">
+      <div *ngSwitchCase="'movies'">
+        <ion-list>
+          <ion-item *ngFor="let movieDownloadItem of movieDownloadItems">
+            <img item-start src="{{movieDownloadItem.picture}}">
+
+            <ion-row>
+              <ion-col text-center>
+                <p class="ellipsis">{{movieDownloadItem.name}}</p>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col text-center>
+                <button (click)="playMovie(movieDownloadItem)" ion-button icon-only clear>
+                  <ion-icon name="md-play"></ion-icon>
+                </button>
+              </ion-col>
+
+              <ion-col text-center>
+                <button (click)="deleteMovie(movieDownloadItem)" ion-button icon-only clear>
+                  <ion-icon name="md-trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div *ngSwitchCase="'tvShows'">
+        <ion-list>
+          <ion-item *ngFor="let episodesDownloadItem of episodesDownloadItems">
+            <img item-start src="{{episodesDownloadItem.picture}}">
+
+            <ion-row>
+              <ion-col text-center>
+                <p class="ellipsis">{{episodesDownloadItem.name}}</p>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col text-center>
+                <button (click)="playEpisode(episodesDownloadItem)" ion-button icon-only clear>
+                  <ion-icon name="md-play"></ion-icon>
+                </button>
+              </ion-col>
+
+              <ion-col text-center>
+                <button (click)="deleteEpisode(episodesDownloadItem)" ion-button icon-only clear>
+                  <ion-icon name="md-trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </div>
+</ion-content>

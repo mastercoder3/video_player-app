@@ -1,0 +1,50 @@
+page-notifications {
+    .back-button {
+        color: map_get($colors, netflixWhite);
+    }
+
+    .toolbar-title {
+        text-align: center;
+        margin-right: 48px;
+        color: map_get($colors, netflixWhite);
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .content {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        ion-item {
+            background: map_get($colors, netflixDarkGrey);
+            
+            .dot {                 
+                height: 10px;
+                width: 10px;
+                background-color: map_get($colors, netflixRed);
+                border-radius: 50%;
+                display: inline-block;
+            }
+            
+            .input-wrapper {
+                max-width: 100px;
+            }
+
+            .new-arrival {
+                font-size: 14px;
+                color: map_get($colors, netflixWhite);
+            }
+
+            .title {
+                font-size: 16px;
+                color: map_get($colors, netflixLightGrey);
+            }
+
+            .date {
+                font-size: 12px;
+                color: map_get($colors, netflixLightGrey);
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+page-home {
+    .toolbar-title {
+        text-align: center;
+    }
+
+    ion-title {
+        img {
+            max-height: 56px;
+            text-align: center;
+        }
+    }
+
+    ion-content.content-md[padding] .scroll-content, ion-content.content-ios[padding] .scroll-content {
+        padding: 0px !important;
+    }
+
+    .content {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        .image::after {
+            display: block;
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, map_get($colors, netflixDarkGrey) 100%);
+            margin-top: -150px;
+            height: 150px;
+            width: 100%;
+            content: '';
+        }
+
+        .scroll-container {
+            padding: 0px 16px;
+            margin-top: -110px;
+
+            ion-row {
+                p {
+                    margin: 0px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: map_get($colors, netflixWhite);
+                }
+
+                .series-button {
+                    margin-bottom: 40px;
+    
+                    ion-icon {
+                        font-size: 25px;
+                    }
+                }
+            }            
+        }
+
+        .item-title {
+            color: map_get($colors, netflixWhite);
+            font-size: 14px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+        
+        ion-scroll[scrollX] {
+            white-space: nowrap;
+            height: 170px;
+            overflow: hidden;
+        
+            .scroll-item {
+              display: inline-block;
+              max-width: 105px;
+            }
+
+            ion-col {
+                img {
+                    height: 150px;
+                    width: 105px;
+                }
+            }
+          }
+        
+          /* Hide ion-content scrollbar */
+          ::-webkit-scrollbar{
+            display:none;
+          }
+    }
+}

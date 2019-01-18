@@ -1,0 +1,91 @@
+<ion-content class="no-scroll" padding text-center>
+  <div>
+    <video id="video" (tap)="showVideoControls()">
+      <source src="https://firebasestorage.googleapis.com/v0/b/testytest-7bef1.appspot.com/o/Black%20Lightning%20_%20Series%20Trailer%20_%20The%20CW.mp4?alt=media&token=ee3f79b7-c716-4dca-9eea-23fa51a78e7f">
+    </video>
+  </div> 
+
+  <ion-row style="height: 8%;" *ngIf="showControls">
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite" (click)="playPause()">
+        <ion-icon name='md-play' *ngIf="!isPlaying"></ion-icon>
+        <ion-icon name='md-pause' *ngIf="isPlaying"></ion-icon>
+      </button>
+    </ion-col>
+
+    <ion-col col-8></ion-col>
+
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite" (cick)="goBack()">
+        <ion-icon name='md-arrow-round-back'></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="height: 10%;" *ngIf="showControls">
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite">
+        <ion-icon name='md-refresh'></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="height: 40%;" *ngIf="showControls">
+    <ion-col col-8></ion-col>
+
+    <ion-col col-4>
+      <p class="title">Black Lightning</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="height: 10%;" *ngIf="showControls">
+    <ion-col col-10></ion-col>
+
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite">
+        <ion-icon name='logo-rss'></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="height: 10%;" *ngIf="showControls">
+    <ion-col col-10></ion-col>
+
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite">
+        <ion-icon name='md-albums'></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="height: 10%;" *ngIf="showControls">
+    <ion-col col-2>
+      <p>02:53</p>
+    </ion-col>
+
+    <ion-col col-8></ion-col>
+
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite">
+          <ion-icon name='md-paper'></ion-icon>
+        </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="height: 10%;" *ngIf="showControls">
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite">
+        <ion-icon name='md-expand'></ion-icon>
+      </button>
+    </ion-col>
+
+    <ion-col col-8></ion-col>
+
+    <ion-col col-2>
+      <button ion-button clear color="netflixWhite">
+        <ion-icon name='md-volume-up'></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

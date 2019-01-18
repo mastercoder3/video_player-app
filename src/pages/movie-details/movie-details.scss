@@ -1,0 +1,82 @@
+page-movie-details {
+    ion-content.content-md[padding] .scroll-content, ion-content.content-ios[padding] .scroll-content {
+        padding: 0px !important;
+    }
+
+    .back-button {
+        color: map_get($colors, netflixWhite);
+    }
+
+    .content {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        .details-picture {
+            width: 100%;
+        }
+
+        .play-movie {
+            margin-top: -220px;
+            margin-left: 40%;
+            font-size: 30px;
+            color: map_get($colors, netflixRed);
+        }
+
+        .title {
+            color: map_get($colors, netflixWhite);
+            font-size: 20px;
+            font-weight: bold;
+            padding-left: 16px;
+            margin: 0px;
+            margin-top: 10px;
+        }
+
+        ion-row {
+            padding-left: 16px;
+        }
+
+        .isPartOfMyList {
+            color: map_get($colors, netflixRed);
+        }
+
+        .downloaded {
+            color: map_get($colors, netflixRed);
+        }
+
+        .movie-details-row {
+            .match-percentage {
+                color: map_get($colors, secondary);
+                margin-right: 5px;
+            }
+    
+            p {
+                color: map_get($colors, netflixLightGrey);
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+
+        .movie-summary-row {
+            p {
+                margin: 0px;
+                color: map_get($colors, netflixLightGrey);
+            }
+        }
+
+        .list-like-download-row {
+            padding-top: 10px;
+
+            p {
+                margin: 0px;
+                color: map_get($colors, netflixLightGrey);
+            }
+        }
+
+        .more-like-this-title {
+            padding-top: 10px;
+            padding-left: 16px;
+            font-size: 16px;
+            font-weight: bold;
+            color: map_get($colors, netflixWhite);
+        }
+    }
+}

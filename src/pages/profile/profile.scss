@@ -1,0 +1,76 @@
+page-profile {
+  .toolbar-background-md,
+  .toolbar-background-ios {
+    background: map_get($colors, netflixDarkGrey);
+  }
+
+  .round-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+  }
+
+  ion-header {
+    border-bottom: black solid 2px;
+  }
+
+  ion-title {
+    ion-row {
+      align-items: center;
+
+      p {
+        color: map_get($colors, netflixWhite);
+      }
+
+      ion-icon {
+        color: map_get($colors, netflixWhite);
+      }
+    }
+  }
+
+  ion-content.content-md[padding] .scroll-content,
+  ion-content.content-ios[padding] .scroll-content {
+    padding: 0px !important;
+  }
+
+  .content {
+    background-color: map_get($colors, netflixDarkGrey);
+
+    .list-ios > .item-block:last-child,
+    .list-ios > .item-wrapper:last-child .item-block {
+      border-bottom: black solid 2px;
+    }
+
+    .top-menu-list {
+      .item-md.item-block .item-inner,
+      .item-ios.item-block .item-inner {
+        border-bottom: 0px;
+      }
+
+      ion-item {
+        border-bottom: black solid 2px;
+        background: map_get($colors, netflixDarkGrey);
+
+        ion-icon {
+          color: map_get($colors, netflixWhite);
+        }
+
+        p {
+          color: map_get($colors, netflixWhite);
+          font-size: 16px;
+        }
+      }
+    }
+
+    .user-menu-list {
+      ion-item {
+        background: map_get($colors, netflixDarkGrey);
+
+        p {
+          color: map_get($colors, netflixWhite);
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

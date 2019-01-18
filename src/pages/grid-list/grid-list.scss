@@ -1,0 +1,11 @@
+page-grid-list {
+    .back-button {
+        color: map_get($colors, netflixWhite);
+    }
+
+    .toolbar-title {
+        text-align: center;
+        margin-right: 48px;
+        color: map_get($colors, netflixWhite);
+    }
+}

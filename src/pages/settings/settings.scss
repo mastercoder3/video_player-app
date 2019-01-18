@@ -1,0 +1,91 @@
+page-settings {
+    .toolbar-title {
+        text-align: center;
+    }
+
+    .back-button {
+        color: map_get($colors, netflixWhite);
+    }
+
+    ion-title {
+        img {
+            max-height: 56px;
+            text-align: center;
+            margin-right: 48px;
+        }
+    }
+
+    .content {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        .list-header-md, .list-header-ios {
+            border-top: 0px;
+        }
+
+        ion-list-header {
+            margin-bottom: 0px;
+            font-weight: bold;
+            background-color: map_get($colors, netflixDarkGrey);
+            color: map_get($colors, netflixWhite);
+        }
+
+        ion-item {
+            background-color: map_get($colors, netflixDarkGrey);
+
+            .item-title {
+                font-size: 14px;                
+                color: map_get($colors, netflixWhite);
+            }
+
+            .item-subtitle {
+                color: map_get($colors, netflixLightGrey);
+            }
+
+            .light-grey-rectangle {
+                height: 10px;
+                width: 30%;
+                background-color: map_get($colors, netflixLightGrey);
+            }
+
+            .red-rectangle {
+                height: 10px;
+                width: 20%;
+                margin-left: 30%;
+                margin-top: -10px;
+                background-color: map_get($colors, netflixRed);
+            }
+
+            .white-rectangle {
+                height: 10px;
+                width: 50%;
+                margin-left: 50%;
+                margin-top: -10px;
+                background-color: map_get($colors, netflixWhite);
+            }
+
+            .light-grey-square {
+                height: 10px;
+                width: 10px;
+                background-color: map_get($colors, netflixLightGrey);
+            }
+
+            .red-square {
+                height: 10px;
+                width: 10px;
+                background-color: map_get($colors, netflixRed);
+            }
+
+            .white-square {
+                height: 10px;
+                width: 10px;
+                background-color: map_get($colors, netflixWhite);
+            }
+
+            .used-storage {
+                margin: 0px 10px;
+                font-size: 12px;                
+                color: map_get($colors, netflixWhite);
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+page-search {
+  ion-navbar {
+    ion-icon {
+      color: map_get($colors, netflixRed);
+      font-size: 30px;
+    }
+  }
+
+  .content {
+    ion-list {
+      ion-item {
+        color: map_get($colors, netflixWhite);
+        background: map_get($colors, netflixBlack);
+      }
+    }
+  }
+}

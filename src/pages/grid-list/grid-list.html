@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-navbar align-title="center">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row *ngIf="loaded && categoryItems.length <= 0">
+    <ion-col text-center>
+      <img class="demo-image" src="assets/netflix-icon.png">
+      <p class="demo-message">There are no movies or shows in this category yet.</p>
+      <p class="demo-sub-message">Use the Admin Ion Netflix to add your own here!</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!loaded">
+    <ion-col text-center>
+      <br>
+      <ion-spinner color="netflixRed"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="loaded && categoryItems.length > 0" style="padding-left: 0px;">
+    <ion-col col-4 *ngFor="let categoryItem of categoryItems">
+      <img src="{{categoryItem.picture}}" (click)="goToCategoryItem(categoryItem)" style="width:100%">
+    </ion-col>
+  </ion-row>
+</ion-content>

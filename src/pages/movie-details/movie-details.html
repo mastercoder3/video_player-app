@@ -1,0 +1,96 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <ion-buttons right>
+      <button ion-button icon-only color="netflixWhite">
+        <ion-icon name="logo-rss" item-end></ion-icon>
+      </button>
+
+      <button ion-button icon-only color="netflixWhite">
+        <ion-icon name="md-share" item-end></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen padding>
+  <img class="details-picture" src="{{detailsPicture}}">
+
+  <button (click)="playMovie()" class="play-movie" ion-button icon-only clear>
+    <ion-icon name="md-play" item-end></ion-icon>
+  </button>
+
+  <p class="title">{{title}}</p>
+
+  <ion-row class="movie-details-row">
+    <p class="match-percentage">99% Match</p>
+    <p>{{releaseYear}}</p>
+    <p>{{rating}}</p>
+    <p>2h 2m</p>
+  </ion-row>
+
+  <ion-row class="movie-summary-row">
+    <p>{{description}}</p>
+  </ion-row>
+
+  <ion-row class="list-like-download-row">
+    <ion-col text-center col-3>
+      <button *ngIf="!isPartOfMyList" (click)="addToMyList()" ion-button icon-only clear color="netflixWhite">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+
+      <button class="isPartOfMyList" *ngIf="isPartOfMyList" (click)="removeFromMyList()" ion-button icon-only clear color="netflixWhite">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+
+      <p>My List</p>
+    </ion-col>
+
+    <ion-col text-center col-3>
+      <button ion-button icon-only clear color="netflixWhite">
+        <ion-icon name="md-thumbs-up"></ion-icon>
+      </button>
+
+      <p>Rate</p>
+    </ion-col>
+
+    <ion-col text-center col-3>
+      <div *ngIf="!isDownloading && !isDownloaded">
+        <button (click)="downloadMovie()" ion-button icon-only clear color="netflixWhite">
+          <ion-icon name="md-download"></ion-icon>
+        </button>
+
+        <p>Download</p>
+      </div>
+
+      <div *ngIf="isDownloading && !isDownloaded">
+        <ion-spinner style="width: 35px; height: 35px;" color="netflixRed"></ion-spinner>
+        <p id="progressText">{{progress}}</p>
+      </div>
+
+      <div *ngIf="isDownloaded">
+        <button class="downloaded" ion-button icon-only clear>
+          <ion-icon name="md-checkmark"></ion-icon>
+        </button>
+
+        <p class="downloaded">Downloaded</p>
+      </div>
+    </ion-col>
+
+    <ion-col col-25></ion-col>
+  </ion-row>
+
+  <p class="more-like-this-title">More like this</p>
+
+  <ion-row *ngIf="!loaded">
+    <ion-col text-center>
+      <br>
+      <ion-spinner color="netflixRed"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="loaded" style="padding-left: 0px;">
+    <ion-col col-4 *ngFor="let movie of recentlyAddedMovies">
+      <img (click)="goToMovie(movie)" src="{{movie.picture}}" style="width:100%">
+    </ion-col>
+  </ion-row>
+</ion-content>

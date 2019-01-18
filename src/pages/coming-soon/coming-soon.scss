@@ -1,0 +1,56 @@
+page-coming-soon {
+    ion-content.content-md[padding] .scroll-content, ion-content.content-ios[padding] .scroll-content {
+        padding: 0px !important;
+    }
+    
+    .content {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        .item-md.item-block .item-inner, .item-ios.item-block .item-inner {
+            padding: 0px;
+        }
+
+        .label-md, .label-ios {
+            margin: 0px;
+        }
+        
+        ion-item {
+            margin: 0px;
+            padding: 0px;
+            background-color: map_get($colors, netflixDarkGrey);
+
+            ion-row {
+                align-items: center;
+                padding-left: 16px;
+
+                .item-title {
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: map_get($colors, netflixWhite);
+                    vertical-align: middle;
+                }
+    
+                button {
+                    background-color: #292929;
+    
+                    p {
+                        color: map_get($colors, netflixWhite);
+                        margin-left: 5px;
+                    }
+                }
+
+                .item-summary {
+                    font-size: 13px;
+                    color: map_get($colors, netflixLightGrey);
+                }
+
+                .coming-date {
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-top: 10px;
+                    color: map_get($colors, netflixRed);
+                }
+            }            
+        }
+    }
+}

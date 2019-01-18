@@ -1,0 +1,49 @@
+page-horizontal-list {
+    .back-button {
+        color: map_get($colors, netflixWhite);
+    }
+
+    .toolbar-title {
+        text-align: center;
+        margin-right: 48px;
+        color: map_get($colors, netflixWhite);
+    }
+
+    .content {
+        .item-title {
+            color: map_get($colors, netflixWhite);
+            font-size: 14px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+        
+        ion-scroll[scrollX] {
+            background-color: map_get($colors, spotifyBlack);
+            white-space: nowrap;
+            height: 170px;
+            overflow: hidden;
+
+            div.scroll-content {
+                padding: 0px;
+            }
+        
+            .scroll-item {
+              display: inline-block;
+              max-width: 105px;
+            }
+
+            ion-col {
+                img {
+                    height: 150px;
+                    width: 105px;
+                }
+            }
+          }
+        
+          /* Hide ion-content scrollbar */
+          ::-webkit-scrollbar{
+            display:none;
+          }
+    }
+}

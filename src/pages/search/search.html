@@ -1,0 +1,44 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-row>
+      <ion-col col-10>
+        <ion-searchbar id="searchInput" [(ngModel)]="searchValue" placeholder="Search" (ionClear)="onClear($event)"></ion-searchbar>
+      </ion-col>
+
+      <ion-col col-2 text-center>
+        <button ion-button clear item-end>
+          <ion-icon name="md-mic"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row *ngIf="!loaded || (isSearching && !searchDone)">
+    <ion-col text-center>
+      <br>
+      <ion-spinner color="netflixRed"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <ion-list *ngIf="loaded && !isSearching" no-lines>
+    <ion-item ion-item *ngFor="let category of categories" (click)="openCategory(category)" clear text-center>
+      {{category.name}}
+    </ion-item>
+  </ion-list>
+
+  <ion-row *ngIf="isSearching && searchItems.length > 0" style="padding-left: 0px;">
+    <ion-col col-4 *ngFor="let searchItem of searchItems">
+      <img src="{{searchItem.picture}}" (click)="goToSearchItem(searchItem)" style="width:100%">
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="isSearching && searchDone && searchItems.length <= 0">
+    <ion-col text-center>
+      <img class="demo-image" src="assets/netflix-icon.png">
+      <p class="demo-message">No results.</p>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

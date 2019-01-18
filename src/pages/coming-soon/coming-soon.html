@@ -1,0 +1,38 @@
+<ion-content padding fullscreen>
+  <ion-list no-lines *ngIf="comingSoonList.length > 0">
+    <ion-item *ngFor="let comingSoon of comingSoonList">
+      <img src="{{ comingSoon.picture }}">
+
+      <ion-row>
+        <ion-col col-8>
+          <p class="item-title">{{ comingSoon.name }}</p>
+        </ion-col>
+
+        <ion-col col-4>
+          <button ion-button clear color="netflixWhite">
+            <ion-icon name='md-add'></ion-icon>
+            <p>My List</p>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <p class="item-summary line-break">{{ comingSoon.description }}</p>
+      </ion-row>
+
+      <ion-row>
+        <p class="coming-date">{{ comingSoon.releaseDate }}</p>
+      </ion-row>
+
+      <br>
+    </ion-item>
+  </ion-list>
+
+  <ion-row style="margin-top: 50%;" *ngIf="loaded && comingSoonList.length <= 0">
+    <ion-col text-center>
+      <img class="demo-image" src="assets/netflix-icon.png">
+      <p class="demo-message">There are no items yet.</p>
+      <p class="demo-sub-message">Use the Admin Ion Netflix to add your own coming soon items here!</p>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,44 @@
+page-mylist {
+    .back-button {
+        color: map_get($colors, netflixWhite);
+    }
+
+    .toolbar-title {
+        text-align: center;
+        margin-right: 48px;
+        color: map_get($colors, netflixWhite);
+    }
+
+    .content {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        .movies-shows-row {
+            height: 65%;
+
+            button {
+                min-height: 50%;
+
+                ion-icon {
+                    font-size: 100px;
+                    color: map_get($colors, netflixLightGrey);
+                }
+            }            
+
+            p {
+                color: map_get($colors, netflixWhite);
+                font-size: 20px;
+            }
+        }
+
+        .find-downloads-row {
+            height: 10%;
+            align-items: center;
+
+            button {
+                color: map_get($colors, netflixWhite);
+                background-color: map_get($colors, netflixBlack);
+                border: 1px solid map_get($colors, netflixLightGrey);
+            }
+        }
+    }
+}

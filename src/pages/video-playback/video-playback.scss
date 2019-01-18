@@ -1,0 +1,54 @@
+page-video-playback {
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+
+    .content {
+        video 
+        {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            -moz-transform:scale(1.75) rotate(90deg);
+            -webkit-transform:scale(1.75) rotate(90deg);
+            -o-transform:scale(1.75) rotate(90deg);
+            -ms-transform:scale(1.75) rotate(90deg);
+            transform:scale(1.75) rotate(90deg);
+        }
+
+        button {
+            -moz-transform:scale(1) rotate(90deg);
+            -webkit-transform:scale(1) rotate(90deg);
+            -o-transform:scale(1) rotate(90deg);
+            -ms-transform:scale(1) rotate(90deg);
+            transform:scale(1) rotate(90deg);
+        }
+
+        ion-range {
+            -moz-transform:scale(1) rotate(90deg);
+            -webkit-transform:scale(1) rotate(90deg);
+            -o-transform:scale(1) rotate(90deg);
+            -ms-transform:scale(1) rotate(90deg);
+            transform:scale(1) rotate(90deg);
+        }
+
+        p {
+            color: map_get($colors, netflixWhite);
+            -moz-transform:scale(1) rotate(90deg);
+            -webkit-transform:scale(1) rotate(90deg);
+            -o-transform:scale(1) rotate(90deg);
+            -ms-transform:scale(1) rotate(90deg);
+            transform:scale(1) rotate(90deg);
+        }
+
+        .title {
+            color: map_get($colors, netflixWhite);
+            font-weight: bold;
+            margin-right: -50px;
+        }
+    }
+}

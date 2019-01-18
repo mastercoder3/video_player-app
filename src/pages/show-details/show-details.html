@@ -1,0 +1,120 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <ion-buttons right>
+      <button ion-button icon-only color="netflixWhite">
+        <ion-icon name="logo-rss" item-end></ion-icon>
+      </button>
+
+      <button ion-button icon-only color="netflixWhite">
+        <ion-icon name="md-share" item-end></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen padding>
+  <img class="details-picture" src="{{detailsPicture}}">
+
+  <p class="title">{{title}}</p>
+
+  <ion-row class="movie-details-row">
+    <p>{{releaseYear}}</p>
+    <p>{{rating}}</p>
+    <p>{{tvShowSeasons.length}} seasons</p>
+  </ion-row>
+
+  <ion-row class="movie-summary-row">
+    <p>{{description}}</p>
+  </ion-row>
+
+  <ion-row class="list-like-download-row">
+    <ion-col text-center col-3>
+      <button *ngIf="!isPartOfMyList" (click)="addToMyList()" ion-button icon-only clear color="netflixWhite">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+
+      <button class="isPartOfMyList" *ngIf="isPartOfMyList" (click)="removeFromMyList()" ion-button icon-only clear color="netflixWhite">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+
+      <p>My List</p>
+    </ion-col>
+
+    <ion-col text-center col-3>
+      <button ion-button icon-only clear color="netflixWhite">
+        <ion-icon name="md-thumbs-up"></ion-icon>
+      </button>
+
+      <p>Rate</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!seasonsLoaded">
+    <ion-col text-center>
+      <br>
+      <ion-spinner color="netflixRed"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="!episodesLoaded">
+    <ion-col text-center>
+      <br>
+      <ion-spinner color="netflixRed"></ion-spinner>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="tvShowSeasons.length > 0">
+    <ion-select title="Pick a season" [(ngModel)]="selectedSeason" (ngModelChange)="seasonChanged($event)">
+      <ion-option *ngFor="let season of tvShowSeasons">{{season.name}}</ion-option>
+    </ion-select>
+  </ion-row>
+
+  <ion-row *ngIf="seasonsLoaded && tvShowSeasons.length <= 0">
+    <ion-col text-center>
+      <img class="demo-image" src="assets/netflix-icon.png">
+      <p class="demo-message">There are no seasons yet.</p>
+      <p class="demo-sub-message">Use the Admin Ion Netflix to add your own seasons here!</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="episodesLoaded && seasonEpisodes.length <= 0">
+    <ion-col text-center>
+      <img class="demo-image" src="assets/netflix-icon.png">
+      <p class="demo-message">There are no episodes yet.</p>
+      <p class="demo-sub-message">Use the Admin Ion Netflix to add your own episodes here!</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-list no-lines *ngIf="episodesLoaded">
+    <div *ngFor="let episode of seasonEpisodes">
+      <ion-item>
+        <img (click)="playEpisode(episode)" item-start src="{{episode.picture}}">
+
+        <ion-col>
+          <p class="episode-title">{{episode.name}}</p>
+          <p class="episode-duration">1h 21m</p>
+        </ion-col>
+
+        <button item-end *ngIf="!episode.isDownloading && !episode.isDownloaded" (click)="downloadEpisode(episode)" ion-button icon-only clear
+          color="netflixWhite">
+          <ion-icon name="md-download"></ion-icon>
+        </button>
+
+        <div item-end *ngIf="episode.isDownloading && !episode.isDownloaded">
+          <ion-spinner style="width: 35px; height: 35px;" color="netflixRed"></ion-spinner>
+          <p>{{episode.downloadProgress}}</p>
+        </div>
+
+        <button item-end class="downloaded" *ngIf="episode.isDownloaded" ion-button icon-only clear color="netflixWhite">
+          <ion-icon name="md-checkmark"></ion-icon>
+        </button>
+      </ion-item>
+
+      <ion-item style="margin-top: -20px;">
+        <ion-row>
+          <p class="line-break">{{episode.description}}</p>
+        </ion-row>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

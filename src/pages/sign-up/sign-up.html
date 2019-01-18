@@ -1,0 +1,327 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/netflix-logo.png">
+    </ion-title>
+
+    <ion-buttons right>
+      <button class="navbar-button" ion-button clear (click)="signIn()">SIGN IN</button>
+      <button class="navbar-button" ion-button clear>HELP</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="image">
+    <img src="assets/imgs/netflix-signup.png">
+  </div>
+
+  <ion-row style="margin-top: -60px;">
+    <ion-col text-center>
+      <p class="title">See what's next.</p>
+      <p class="subtitle">WATCH ANYWHERE. CANCEL AT ANY TIME.</p>
+    </ion-col>
+  </ion-row>
+
+  <br>
+
+  <ion-row>
+    <p class="sign-up-title">Sign up</p>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="registerData.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="registerData.password"></ion-input>
+    </ion-item>
+
+    <button class="signup-button" color="netflixRed" ion-button round full (click)="signUp()">SIGN UP</button>
+  </ion-row>
+
+  <br>
+
+  <div padding>
+    <ion-segment [(ngModel)]="signUpSegment">
+      <ion-segment-button value="cancel">
+        <button ion-button clear>
+          <ion-icon name="md-close-circle"></ion-icon>
+          <p>Cancel</p>
+        </button>
+      </ion-segment-button>
+
+      <ion-segment-button value="devices">
+        <button ion-button clear>
+          <ion-icon name="md-desktop"></ion-icon>
+          <p>Devices</p>
+        </button>
+      </ion-segment-button>
+
+      <ion-segment-button value="price">
+        <button ion-button clear>
+          <ion-icon name="md-pricetags"></ion-icon>
+          <p>Price</p>
+        </button>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="signUpSegment">
+    <div class="netflixSegment cancelSegment" *ngSwitchCase="'cancel'">
+      <ion-col text-center>
+        <p class="segment-title">If you decide Netflix isn't for you - no</p>
+        <p class="segment-title">problem. No commitment. Cancel online</p>
+        <p class="segment-title">at any time.</p>
+
+        <button color="netflixRed" ion-button round block>JOIN FREE FOR A MONTH</button>
+      </ion-col>
+    </div>
+
+    <div class="netflixSegment devicesSegment" *ngSwitchCase="'devices'">
+      <ion-col text-center>
+        <p class="segment-title">Watch TV shows and movies at</p>
+        <p class="segment-title">any time, anywhere -</p>
+        <p class="segment-title">personalised for you.</p>
+
+        <button color="netflixRed" ion-button round block>JOIN FREE FOR A MONTH</button>
+      </ion-col>
+
+      <img src="assets/imgs/devices-netflix.png">
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="devices-segment-title">Watch on your TV</p>
+
+          <p class="devices-segment-subtitle">Smart Tvs, Playstation, Xbox, Chromecast,</p>
+          <p class="devices-segment-subtitle">Apple TV, Blu-ray players and more.</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="devices-segment-title">Watch instantly or download for later</p>
+
+          <p class="devices-segment-subtitle">Available on phone and tablet,</p>
+          <p class="devices-segment-subtitle">wherever you go.</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="devices-segment-title">Use any computer</p>
+
+          <p class="devices-segment-subtitle">Watch instantly in your browser.</p>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="netflixSegment priceSegment" *ngSwitchCase="'price'">
+      <ion-col text-center>
+        <p class="segment-title">Choose one plan and watch</p>
+        <p class="segment-title">everything on Netflix.</p>
+
+        <button color="netflixRed" ion-button round block>JOIN FREE FOR A MONTH</button>
+      </ion-col>
+
+      <ion-row style="margin-top: 40px;">
+        <ion-col text-center col-4>
+          <p class="table-column">BASIC</p>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <p class="table-column">STANDARD</p>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <p class="table-column">PREMIUM</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">Monthly price after free month ends on 27/3/18</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <p class="table-value">$9.99</p>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <p class="table-value">$13.99</p>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <p class="table-value">$17.99</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">HD available</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <ion-icon name="md-close" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">Ultra HD available</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <ion-icon name="md-close" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-close" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">Screens you can watch on at the same time</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <p class="table-value">1</p>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <p class="table-value">2</p>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <p class="table-value">4</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">Watch on your laptop, TV, phone & tablet</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">Unlimited movies and TV shows</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">Cancel at any time</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="table-value">First month free</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+
+        <ion-col text-center col-4>
+          <ion-icon name="md-checkmark" class="table-value"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <p class="questions">Questions? Phone 1800 071 578</p>
+
+  <ion-row>
+    <ion-col col-6>
+      <p class="footer-text">Help Centre</p>
+    </ion-col>
+
+    <ion-col col-6>
+      <p class="footer-text">Terms of Use</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-6>
+      <p class="footer-text">Privacy</p>
+    </ion-col>
+
+    <ion-col col-6>
+      <p class="footer-text">Cookie Preferences</p>
+    </ion-col>
+  </ion-row>
+
+  <p class="footer-text">Netflix Australia</p>
+</ion-content>

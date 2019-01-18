@@ -1,0 +1,85 @@
+page-downloads {
+  .toolbar-title {
+    color: map_get($colors, netflixWhite);
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .content {
+    background-color: map_get($colors, netflixDarkGrey);
+
+    .smart-downloads-row {
+      height: 20%;
+      border-bottom: 1px solid map_get($colors, netflixLightGrey);
+      align-items: center;
+
+      .item-title {
+        color: map_get($colors, netflixWhite);
+      }
+
+      .item-sub-title {
+        color: map_get($colors, netflixLightGrey);
+        margin: 0px;
+      }
+
+      ion-toggle {
+        vertical-align: middle;
+      }
+    }
+
+    .movies-shows-row {
+      height: 65%;
+
+      button {
+        min-height: 50%;
+
+        ion-icon {
+          font-size: 100px;
+          color: map_get($colors, netflixLightGrey);
+        }
+      }
+
+      p {
+        color: map_get($colors, netflixWhite);
+        font-size: 20px;
+      }
+    }
+
+    .find-downloads-row {
+      height: 10%;
+      align-items: center;
+
+      button {
+        color: map_get($colors, netflixWhite);
+        background-color: map_get($colors, netflixBlack);
+        border: 1px solid map_get($colors, netflixLightGrey);
+      }
+    }
+
+    ion-segment-button {
+      color: map_get($colors, netflixRed);
+    }
+
+    ion-list {
+      ion-item {
+        background-color: map_get($colors, netflixDarkGrey);
+
+        img {
+          width: 30%;
+        }
+
+        p {
+          font-size: 20px;
+          color: map_get($colors, netflixWhite);
+        }
+
+        button {
+          ion-icon {
+            color: map_get($colors, netflixRed);
+          }
+        }
+      }
+    }
+  }
+}

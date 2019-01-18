@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-row (click)="goToUsers()">
+        <ion-col *ngIf="userPicture == null" text-center col-2>
+          <img src="assets/imgs/netflix-avatar.png">
+        </ion-col>
+
+        <ion-avatar *ngIf="userPicture != null" text-center col-2>
+          <img class="round-image" src="{{userPicture}}">
+        </ion-avatar>
+
+        <ion-col col-8>
+          <p *ngIf="userName == null">Mr John Doe</p>
+          <p *ngIf="userName != null">{{userName}}</p>
+        </ion-col>
+
+        <ion-col text-center col-2>
+          <ion-icon name="md-repeat" item-end></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list class="top-menu-list">
+    <ion-item (click)="goToNotifications()">
+      <ion-icon name="md-notifications" item-start></ion-icon>
+      <p>Notifications</p>
+    </ion-item>
+
+    <ion-item (click)="goToMyList()">
+      <ion-icon name="md-checkmark" item-start></ion-icon>
+      <p>My List</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines class="user-menu-list">
+    <ion-item (click)="goToSettings()">
+      <p>App Settings</p>
+    </ion-item>
+
+    <ion-item>
+      <p>Account</p>
+    </ion-item>
+
+    <ion-item>
+      <p>About</p>
+    </ion-item>
+
+    <ion-item>
+      <p>Help</p>
+    </ion-item>
+
+    <ion-item (click)="signOut()">
+      <p>Sign Out</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

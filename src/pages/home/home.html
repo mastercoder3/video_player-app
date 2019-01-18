@@ -1,0 +1,59 @@
+<ion-header no-border>
+  <ion-navbar align-title="center" transparent>
+    <ion-title>
+      <img src="assets/imgs/netflix-logo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen padding #pageContent>
+  <div class="image">
+    <img src="assets/imgs/black-lightning-poster3.png">
+  </div>
+
+  <div class="scroll-container">
+    <ion-row text-center>
+      <ion-col>
+        <p>New episode coming March 6th</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="series-button" col-4 text-center>
+        <button ion-button clear color="netflixWhite">
+          <ion-icon name='md-add'></ion-icon>
+        </button>
+      </ion-col>
+
+      <ion-col class="series-button" col-4 text-center>
+        <button ion-button icon-start color="netflixWhite" (click)="playVideoTrailer()">
+          <ion-icon name='ios-play'></ion-icon>
+          PLAY
+        </button>
+      </ion-col>
+
+      <ion-col class="series-button" col-4 text-center>
+        <button ion-button clear color="netflixWhite">
+          <ion-icon name='ios-information-circle-outline'></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-list>
+      <div *ngFor="let homeScreenGroup of homeScreenGroups">
+        <div class="item-title">{{homeScreenGroup.name}}</div>
+
+        <ion-scroll scrollX="true" scroll-avatar>
+          <ion-list>
+            <ion-col *ngFor="let groupItem of homeScreenGroup.groupItems" class="scroll-item">
+              <img src="{{ groupItem.picture }}" (click)="goToGroupItemDetails(groupItem)" />
+            </ion-col>
+          </ion-list>
+        </ion-scroll>
+      </div>
+    </ion-list>
+
+    <br>
+    <br>
+  </div>
+</ion-content>

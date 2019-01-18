@@ -1,0 +1,67 @@
+<ion-header no-border>
+  <ion-navbar align-title="center">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="item-title">Popular on Netflix</div>
+
+  <ion-scroll scrollX="true" scroll-avatar>
+    <ion-list>
+      <ion-col *ngFor="let movie of popularMovies" class="scroll-item">
+        <img src="{{ movie }}" />
+      </ion-col>
+    </ion-list>
+  </ion-scroll>
+
+  <div class="item-title">Trending Now</div>
+
+  <ion-scroll scrollX="true" scroll-avatar>
+    <ion-list>
+      <ion-col *ngFor="let movie of trendingMovies" class="scroll-item">
+        <img src="{{ movie }}" />
+      </ion-col>
+    </ion-list>
+  </ion-scroll>
+
+  <div class="item-title">Continue watching for Mr John Doe</div>
+
+  <ion-scroll scrollX="true" scroll-avatar>
+    <ion-list>
+      <ion-col *ngFor="let movie of myMovies" class="scroll-item">
+        <img src="{{ movie }}" />
+      </ion-col>
+    </ion-list>
+  </ion-scroll>
+
+  <div class="item-title">Popular on Netflix</div>
+
+  <ion-scroll scrollX="true" scroll-avatar>
+    <ion-list>
+      <ion-col *ngFor="let movie of popularMovies" class="scroll-item">
+        <img src="{{ movie }}" />
+      </ion-col>
+    </ion-list>
+  </ion-scroll>
+
+  <div class="item-title">Trending Now</div>
+
+  <ion-scroll scrollX="true" scroll-avatar>
+    <ion-list>
+      <ion-col *ngFor="let movie of trendingMovies" class="scroll-item">
+        <img src="{{ movie }}" />
+      </ion-col>
+    </ion-list>
+  </ion-scroll>
+
+  <div class="item-title">Continue watching for Mr John Doe</div>
+
+  <ion-scroll scrollX="true" scroll-avatar>
+    <ion-list>
+      <ion-col *ngFor="let movie of myMovies" class="scroll-item">
+        <img src="{{ movie }}" />
+      </ion-col>
+    </ion-list>
+  </ion-scroll>
+</ion-content>
